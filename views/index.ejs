@@ -7,24 +7,32 @@
     <title>Document</title>
 </head>
 <body>
-    <h2> Quotes </h2>
-
-<ul class="quotes">
-  <!-- Loop through quotes -->
-  <% for(var i = 0; i < quotes.length; i++) {%>
-    <li class="quote">
-      <!-- Output name from the iterated quote object -->
-      <span><%= quotes[i].name %></span>:
-      <!-- Output quote from the iterated quote object -->
-      <span><%= quotes[i].quotes %></span>
-    </li>
-  <% } %>
-</ul>
+<h1>May Node be with you!</h1>
     <form action="/quotes" method="POST">
         <input type="text" placeholder="name" name="name">
         <input type="text" placeholder="quotes" name="quotes">
         <button type="submit">SUBMIT</button>
     </form>
-    <%= quotes %>
+    <h2> Quotes </h2>
+
+    <ul class="quotes">
+      <!-- Loop through quotes -->
+      <% for(var i = 0; i < quotes.length; i++) {%>
+        <li class="quote">
+          <!-- Output name from the iterated quote object -->
+          <span><%= quotes[i].name %></span>:
+          <!-- Output quote from the iterated quote object -->
+          <span><%= quotes[i].quotes %></span>
+        </li>
+      <% } %>
+    </ul>
+    <div>
+        <h2>Creepy Doug invades!</h2>
+        <p>
+          Replace first Good Doug's quote with a quote written by Creepy Doug
+        </p>
+        <button id="update-button">Replace Good Doug's quote</button>
+      </div>
+      <script src="/main.js"></script>
 </body>
 </html>
