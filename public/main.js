@@ -7,7 +7,12 @@ update.addEventListener('click', _ => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         name: 'Creepy Doug',
-        quote: 'I want to breathe heavily on your neck.'
+        quotes: 'I want to breathe heavily on your neck.'
       })
     })
-  })
+    .then(res => {
+        if (res.ok) return res.json()
+      })
+      .then(response => {
+        window.location.reload(true)
+      })
